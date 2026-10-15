@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-lang="zh"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>页致 PAGELY · 单页落地页与简易官网 | One-Page Websites</title>
+<meta name="description" content="页致 PAGELY —— 为小商店与应届生做单页落地页、简易官网与中英 / 中西双语站点。作品集与报价一览。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%236366F1'/%3E%3Ctext x='16' y='23' font-size='18' font-family='sans-serif' font-weight='700' fill='%23ffffff' text-anchor='middle'%3E%E8%87%B4%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0C0C10; --bg2:#131319; --card:#17171F; --ink:#F5F5F8; --ink2:#A0A0B2; --muted:#6E6E80;
+  --a1:#6366F1; --a2:#22D3EE; --a3:#F59E0B; --line:rgba(255,255,255,.1);
+  --r:18px; --maxw:1140px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:Inter,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif;font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{line-height:1.2;letter-spacing:-.03em;font-weight:800}
+a{color:inherit;text-decoration:none}
+svg{display:block}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+[data-lang-block],[data-lang-inline]{display:none}
+html[data-lang="zh"] [data-lang-block="zh"]{display:block}
+html[data-lang="en"] [data-lang-block="en"]{display:block}
+html[data-lang="zh"] [data-lang-inline="zh"]{display:inline}
+html[data-lang="en"] [data-lang-inline="en"]{display:inline}
+
+.nav{position:sticky;top:0;z-index:60;background:rgba(12,12,16,.8);backdrop-filter:blur(18px);border-bottom:1px solid transparent;transition:.3s}
+.nav.scrolled{border-color:var(--line)}
+.nav-in{display:flex;align-items:center;gap:22px;height:72px}
+.mark{display:flex;align-items:center;gap:11px;font-weight:800;font-size:16px;letter-spacing:-.02em}
+.mark i{width:30px;height:30px;border-radius:9px;background:linear-gradient(140deg,var(--a1),var(--a2));display:grid;place-items:center;font-style:normal;font-size:16px;font-weight:700;color:#fff;font-family:"PingFang SC","Microsoft YaHei",sans-serif}
+.nav-links{display:flex;gap:26px;margin-left:auto;font-size:14px;font-weight:500;color:var(--ink2)}
+.nav-links a:hover{color:var(--a2)}
+.lang{display:flex;border:1px solid var(--line);border-radius:999px;padding:3px;font-size:12px;font-weight:700}
+.lang button{border:0;background:none;font:inherit;color:var(--ink2);padding:6px 13px;border-radius:999px;cursor:pointer;transition:.2s}
+.lang button[aria-pressed="true"]{background:var(--a1);color:#fff}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:14px 26px;border-radius:11px;font-weight:600;font-size:14.5px;border:1px solid transparent;cursor:pointer;transition:.22s;font-family:inherit}
+.btn-p{background:linear-gradient(100deg,var(--a1),#8B5CF6);color:#fff;box-shadow:0 16px 34px -16px rgba(99,102,241,.95)}
+.btn-p:hover{transform:translateY(-2px)}
+.btn-o{border-color:var(--line);color:var(--ink)}
+.btn-o:hover{border-color:var(--a2);color:var(--a2)}
+.burger{display:none;background:none;border:0;cursor:pointer}
+.burger span{display:block;width:22px;height:2px;background:var(--ink);margin:4px 0}
+
+.hero{position:relative;overflow:hidden;padding:100px 0 88px}
+.hero::before{content:"";position:absolute;inset:0;background:
+  radial-gradient(680px 440px at 78% -8%,rgba(99,102,241,.3),transparent 62%),
+  radial-gradient(520px 380px at 4% 100%,rgba(34,211,238,.15),transparent 60%)}
+.grid-bg{position:absolute;inset:0;opacity:.4;
+  background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);
+  background-size:56px 56px;mask-image:radial-gradient(ellipse 80% 60% at 50% 30%,#000,transparent)}
+.hg{position:relative;z-index:2;max-width:840px}
+.badge{display:inline-flex;align-items:center;gap:9px;font-size:12.5px;font-weight:600;color:var(--a2);border:1px solid rgba(34,211,238,.4);background:rgba(34,211,238,.08);padding:7px 15px;border-radius:999px;margin-bottom:24px}
+h1{font-size:clamp(34px,5.4vw,62px);margin-bottom:22px;font-weight:900}
+h1 em{font-style:normal;background:linear-gradient(100deg,var(--a1),var(--a2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{font-size:18px;color:var(--ink2);max-width:60ch;margin-bottom:34px}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:48px}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.kpi{background:var(--bg2);padding:22px 20px}
+.kpi b{display:block;font-size:24px;font-weight:900;letter-spacing:-.03em;margin-bottom:2px}
+.kpi.k1 b{color:var(--a2)}.kpi.k2 b{color:var(--a1)}.kpi.k3 b{color:var(--a3)}.kpi.k4 b{color:#34D399}
+.kpi span{font-size:12.5px;color:var(--ink2)}
+
+section{padding:88px 0}
+.head{margin-bottom:48px;max-width:660px}
+.kick{display:block;font-size:12px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--a2);margin-bottom:13px}
+.head h2{font-size:clamp(26px,3.6vw,40px);margin-bottom:15px}
+.head p{color:var(--ink2);font-size:16.5px}
+.alt{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+
+.svc{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.s{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:32px 28px;transition:.28s;position:relative;overflow:hidden}
+.s:hover{transform:translateY(-5px);border-color:rgba(99,102,241,.6)}
+.s .ic{width:46px;height:46px;border-radius:13px;display:grid;place-items:center;margin-bottom:20px;background:rgba(99,102,241,.14);color:var(--a2)}
+.s h3{font-size:19px;margin-bottom:10px}
+.s p{font-size:14.5px;color:var(--ink2);margin-bottom:20px}
+.s .price{font-size:26px;font-weight:900;letter-spacing:-.03em;margin-bottom:4px}
+.s .price small{font-size:13px;font-weight:500;color:var(--muted);letter-spacing:0}
+.s .dur{font-size:12.5px;color:var(--muted);margin-bottom:20px}
+.s ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+.s li{display:flex;gap:10px;font-size:14px;color:var(--ink2)}
+.s li svg{flex:none;margin-top:4px;color:var(--a2)}
+.s.feat{border-color:rgba(99,102,241,.55);background:linear-gradient(180deg,rgba(99,102,241,.09),var(--card))}
+.s .rib{position:absolute;top:18px;right:-34px;transform:rotate(38deg);background:var(--a1);color:#fff;font-size:11px;font-weight:700;padding:4px 40px;letter-spacing:.06em}
+
+.works{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.w{display:block;background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;transition:.3s}
+.w:hover{transform:translateY(-6px);box-shadow:0 30px 60px -34px rgba(0,0,0,.9);border-color:rgba(99,102,241,.5)}
+.w .pv{height:230px;position:relative;display:grid;place-items:center;overflow:hidden}
+.w .pv .mock{transition:.45s;width:78%;background:#fff;border-radius:10px 10px 0 0;overflow:hidden;box-shadow:0 20px 40px -18px rgba(0,0,0,.6)}
+.w:hover .pv .mock{transform:translateY(-8px)}
+.w .bar{height:22px;background:#EDEDF2;display:flex;align-items:center;gap:5px;padding:0 10px}
+.w .bar i{width:7px;height:7px;border-radius:50%;background:#C8C8D2}
+.w .bar i:first-child{background:#F0876F}
+.w .body{padding:0 12px 12px}
+.w .sk{height:9px;border-radius:5px;background:#E4E4EC;margin-top:9px}
+.w .sk.a{width:62%;height:13px;background:#C9C9D8}
+.w .sk.b{width:88%}
+.w .sk.c{width:44%}
+.w .blk{height:52px;border-radius:8px;margin-top:11px}
+.w1 .pv{background:linear-gradient(140deg,#3E2723,#8D6E63)}
+.w1 .blk{background:linear-gradient(120deg,#C08358,#8A4A1C)}
+.w2 .pv{background:linear-gradient(140deg,#0F3D33,#12A88C)}
+.w2 .blk{background:linear-gradient(120deg,#4FBF9F,#0E7C66)}
+.w3 .pv{background:linear-gradient(140deg,#5A1616,#B4451F)}
+.w3 .blk{background:linear-gradient(120deg,#E2A93B,#C8102E)}
+.w4 .pv{background:linear-gradient(140deg,#2B2B6B,#6366F1)}
+.w4 .blk{background:linear-gradient(120deg,#A5B4FC,#4F46E5)}
+.w5 .pv{background:linear-gradient(140deg,#8E3E5C,#E7B9C6)}
+.w5 .blk{background:linear-gradient(120deg,#F3D3DC,#B85C7A)}
+.w .info{padding:22px 24px 26px}
+.w .tagline{font-size:11.5px;font-weight:800;letter-spacing:.13em;text-transform:uppercase;color:var(--a2);margin-bottom:9px}
+.w h3{font-size:19px;margin-bottom:9px}
+.w p{font-size:14.5px;color:var(--ink2);margin-bottom:16px}
+.w .link{font-size:13.5px;font-weight:700;color:var(--a1);display:inline-flex;align-items:center;gap:7px}
+.w:hover .link{gap:11px}
+.w .link{transition:gap .25s}
+
+.flow{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+.stp{position:relative;padding-top:34px}
+.stp::before{content:"";position:absolute;top:11px;left:0;right:-16px;height:2px;background:var(--line)}
+.stp:last-child::before{background:linear-gradient(90deg,var(--line),transparent)}
+.stp i{position:absolute;top:2px;left:0;width:20px;height:20px;border-radius:50%;background:var(--a1);color:#fff;font-size:11px;font-weight:800;display:grid;place-items:center;font-style:normal;z-index:2}
+.stp h4{font-size:15.5px;margin-bottom:7px}
+.stp p{font-size:13.5px;color:var(--ink2)}
+
+.faqbox{max-width:820px}
+.qa{border-bottom:1px solid var(--line)}
+.qa summary{list-style:none;cursor:pointer;padding:22px 44px 22px 0;font-weight:600;font-size:16px;position:relative}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary::after{content:"+";position:absolute;right:8px;top:50%;transform:translateY(-50%);font-size:22px;font-weight:300;color:var(--a2);transition:.25s}
+.qa[open] summary::after{transform:translateY(-50%) rotate(45deg)}
+.qa .ans{padding:0 44px 22px 0;color:var(--ink2);font-size:14.5px}
+
+.cta{background:linear-gradient(140deg,#1B1B2E,#131319);border:1px solid rgba(99,102,241,.35);border-radius:26px;padding:56px 48px;text-align:center;position:relative;overflow:hidden}
+.cta::after{content:"";position:absolute;width:520px;height:520px;border-radius:50%;left:50%;top:-300px;transform:translateX(-50%);background:radial-gradient(circle,rgba(99,102,241,.4),transparent 66%)}
+.cta h2{font-size:clamp(26px,3.6vw,38px);margin-bottom:16px;position:relative}
+.cta p{color:var(--ink2);max-width:56ch;margin:0 auto 30px;font-size:16.5px;position:relative}
+.cta .btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;position:relative}
+
+footer{padding:40px 0;border-top:1px solid var(--line);font-size:13.5px;color:var(--muted)}
+.fin{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}
+.fin a{color:var(--a2);font-weight:600;text-decoration:none}
+.fin a:hover{color:var(--ink)}
+
+.hint{margin-top:16px;font-size:12.5px;color:var(--muted);position:relative}
+.toast{position:fixed;left:50%;bottom:34px;transform:translate(-50%,20px);background:#1B1B2E;border:1px solid rgba(99,102,241,.55);color:var(--ink);padding:13px 22px;border-radius:12px;font-size:14px;font-weight:600;box-shadow:0 22px 44px -20px rgba(0,0,0,.95);opacity:0;pointer-events:none;transition:.28s cubic-bezier(.2,.7,.3,1);z-index:99;max-width:88vw;text-align:center}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .75s cubic-bezier(.2,.7,.3,1),transform .75s cubic-bezier(.2,.7,.3,1)}
+.reveal.in{opacity:1;transform:none}
+
+@media(max-width:980px){
+  .svc,.works{grid-template-columns:1fr}
+  .kpis{grid-template-columns:1fr 1fr}
+  .flow{grid-template-columns:1fr;gap:22px}
+  .stp{padding-top:0;padding-left:32px}
+  .stp::before{top:0;bottom:-22px;left:9px;right:auto;width:2px;height:auto}
+  .stp i{top:-2px}
+  .nav-links{display:none}.burger{display:block;margin-left:auto}
+  section{padding:62px 0}
+  .cta{padding:40px 24px}
+}
+</style>
+</head>
+<body style="">
+
+<header class="nav scrolled" id="nav">
+  <div class="wrap nav-in">
+    <div class="mark"><i>致</i>页致 PAGELY</div>
+    <nav class="nav-links">
+      <a href="#svc"><span data-lang-inline="zh">服务与报价</span><span data-lang-inline="en">Services</span></a>
+      <a href="#works"><span data-lang-inline="zh">作品</span><span data-lang-inline="en">Work</span></a>
+      <a href="#flow"><span data-lang-inline="zh">流程</span><span data-lang-inline="en">Process</span></a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div class="lang">
+      <button data-setlang="zh" aria-pressed="true">中文</button>
+      <button data-setlang="en" aria-pressed="false">EN</button>
+    </div>
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="grid-bg"></div>
+  <div class="wrap hg">
+    <div class="badge">
+      <span data-lang-inline="zh">本周还可接 2 单 · 3 天交付</span>
+      <span data-lang-inline="en">2 slots left this week · 3-day delivery</span>
+    </div>
+    <h1>
+      <span data-lang-block="zh">给小商店和应届生，<br>做一个<em>真的有人点进来</em>的单页。</span>
+      <span data-lang-block="en">A one-page site for small shops and graduates<br>that people <em>actually click through</em>.</span>
+    </h1>
+    <p class="lead">
+      <span data-lang-block="zh">不套模板、不卖你一年域名套餐。我做的是一张能在微信里发出去、三秒说清你是谁、并且手机上打开很快的页面。支持中英 / 中西双语。</span>
+      <span data-lang-block="en">No recycled templates, no one-year hosting upsell. You get a page you can send on WeChat, that explains who you are in three seconds, and loads fast on a phone. Bilingual ZH/EN or ZH/ES available.</span>
+    </p>
+    <div class="hero-cta">
+      <a href="#svc" class="btn btn-p">
+        <span data-lang-inline="zh">看服务与报价</span><span data-lang-inline="en">See services &amp; pricing</span>
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+      </a>
+      <a href="#works" class="btn btn-o"><span data-lang-inline="zh">先看作品</span><span data-lang-inline="en">Browse work first</span></a>
+    </div>
+    <div class="kpis">
+      <div class="kpi k1"><b>1<span data-lang-inline="zh">秒</span><span data-lang-inline="en">s</span></b><span data-lang-block="zh">移动端首屏加载</span><span data-lang-block="en">mobile first paint</span></div>
+      <div class="kpi k2"><b>2<span data-lang-inline="zh">种语言</span><span data-lang-inline="en"> langs</span></b><span data-lang-block="zh">中文 + 英 / 西</span><span data-lang-block="en">Chinese + EN / ES</span></div>
+      <div class="kpi k3"><b>3<span data-lang-inline="zh">天</span><span data-lang-inline="en"> days</span></b><span data-lang-block="zh">标准交付周期</span><span data-lang-block="en">standard turnaround</span></div>
+      <div class="kpi k4"><b>100%</b><span data-lang-block="zh">源码交付，无锁定</span><span data-lang-block="en">code handed over, no lock-in</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="svc" class="alt">
+  <div class="wrap">
+    <div class="head reveal in">
+      <span class="kick"><span data-lang-inline="zh">服务与报价</span><span data-lang-inline="en">Services &amp; pricing</span></span>
+      <h2><span data-lang-block="zh">三档，按你需要选</span><span data-lang-block="en">Three tiers — pick what you need</span></h2>
+      <p><span data-lang-block="zh">所有价格含 2 轮修改、手机适配与上线部署协助。不含域名与服务器费用（约 ¥60–100 / 年）。</span><span data-lang-block="en">All tiers include two revision rounds, mobile optimization and deployment help. Domain and hosting (about ¥60–100/year) are not included.</span></p>
+    </div>
+    <div class="svc">
+      <div class="s reveal in">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v14H4z"></path><path d="M4 9h16"></path><path d="M9 13h6"></path></svg></div>
+        <h3><span data-lang-block="zh">个人名片页</span><span data-lang-block="en">Personal Profile Page</span></h3>
+        <p><span data-lang-block="zh">适合应届生求职、自由职业者。一页说明你是谁、能做什么、怎么联系。</span><span data-lang-block="en">For graduates and freelancers. One page covering who you are, what you do and how to reach you.</span></p>
+        <div class="price">¥399<small> <span data-lang-inline="zh">起</span><span data-lang-inline="en">from</span></small></div>
+        <div class="dur"><span data-lang-inline="zh">交付周期 2–3 天</span><span data-lang-inline="en">2–3 day turnaround</span></div>
+        <ul>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M20 6L9 17l-5-5"></path></svg><span data-lang-inline="zh">单页 6–8 个板块</span><span data-lang-inline="en">6–8 sections</span></li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M20 6L9 17l-5-5"></path></svg><span data-lang-inline="zh">简历 PDF 下载按钮</span><span data-lang-inline="en">Resume PDF download</span></li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M20 6L9 17l-5-5"></path></svg><span data-lang-inline="zh">手机 / 电脑适配</span><span data-lang-inline="en">Mobile &amp; desktop ready</span></li>
+        </ul>
+      </div>
+      <div class="s feat reveal in">
+        <div class="rib"><span data-lang-inline="zh">最多人选</span><span data-lang-inline="en">POPULAR</span></div>
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10l9-6 9 6v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"></path><path d="M9 21V13h6v8"></path></svg></div>
+        <h3><span data-lang-block="zh">店铺单页</span><span data-lang-block="en">Shop One-Pager</span></h3>
+        <p><span data-lang-block="zh">适合咖啡店、餐厅、工作室、宠物店。菜单 / 服务、环境、评价、地址与预订入口。</span><span data-lang-block="en">For cafes, restaurants, studios and pet shops. Menu, space, reviews, address and a booking entry point.</span></p>
+        <div class="price">¥899<small> <span data-lang-inline="zh">起</span><span data-lang-inline="en">from</span></small></div>
+        <div class="dur"><span data-lang-inline="zh">交付周期 3–5 天</span><span data-lang-inline="en">3–5 day turnaround</span></div>
+        <ul>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M20 6L9 17l-5-5"></path></svg><span data-lang-inline="zh">地图 / 电话 / 微信 一键跳转</span><span data-lang-inline="en">One-tap map, phone and WeChat</span></li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M20 6L9 17l-5-5"></path></svg><span data-lang-inline="zh">预约 / 咨询表单</span><span data-lang-inline="en">Booking or enquiry form</span></li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M20 6L9 17l-5-5"></path></svg><span data-lang-inline="zh">微信分享卡片优化</span><span data-lang-inline="en">WeChat share card optimized</span></li>
+        </ul>
+      </div>
+      <div class="s reveal in">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.5 2.7 3.8 5.7 3.8 9S14.5 18.3 12 21c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3z"></path></svg></div>
+        <h3><span data-lang-block="zh">双语 / 跨境版</span><span data-lang-block="en">Bilingual / Cross-border</span></h3>
+        <p><span data-lang-block="zh">在店铺单页基础上增加语言切换，适合做外国客人生意的店，或申请海外院校的同学。</span><span data-lang-block="en">The shop page plus a language switcher — for businesses with foreign customers or students applying abroad.</span></p>
+        <div class="price">¥1,290<small> <span data-lang-inline="zh">起</span><span data-lang-inline="en">from</span></small></div>
+        <div class="dur"><span data-lang-inline="zh">交付周期 4–6 天</span><span data-lang-inline="en">4–6 day turnaround</span></div>
+        <ul>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M20 6L9 17l-5-5"></path></svg><span data-lang-inline="zh">中 / 英 / 西 任选两语</span><span data-lang-inline="en">Any two of ZH / EN / ES</span></li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M20 6L9 17l-5-5"></path></svg><span data-lang-inline="zh">一键切换，记住选择</span><span data-lang-inline="en">One-tap switch, remembered</span></li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M20 6L9 17l-5-5"></path></svg><span data-lang-inline="zh">基础 SEO 与分享预览</span><span data-lang-inline="en">Basic SEO &amp; share preview</span></li>
+        </ul>
+      </div>
+    </div>
+    <p style="margin-top:26px;font-size:13.5px;color:var(--muted)">
+      <span data-lang-inline="zh">加急（48 小时内）加收 30%；单页之外每增加一个子页面 +¥200；年费维护（改字、换图、备份）¥300 / 年。</span>
+      <span data-lang-inline="en">Rush (under 48h) +30%; each extra sub-page +¥200; annual maintenance (text and image updates, backups) ¥300/year.</span>
+    </p>
+  </div>
+</section>
+
+<section id="works">
+  <div class="wrap">
+    <div class="head reveal in">
+      <span class="kick"><span data-lang-inline="zh">作品样例</span><span data-lang-inline="en">Sample work</span></span>
+      <h2><span data-lang-block="zh">五份可以直接点开看的样例</span><span data-lang-block="en">Five samples you can open right now</span></h2>
+      <p><span data-lang-block="zh">每份都是完整可交付的成品，点击卡片可直接预览。右下角有语言切换按钮可以试。</span><span data-lang-block="en">Each is a complete deliverable. Click a card to preview it — try the language switch at the bottom right of the nav.</span></p>
+    </div>
+    <div class="works">
+      <a class="w w1 reveal in" href="01-cafe-landing.html">
+        <div class="pv">
+          <div class="mock">
+            <div class="bar"><i></i><i></i><i></i></div>
+            <div class="body">
+              <div class="sk a"></div>
+              <div class="sk b"></div>
+              <div class="sk c"></div>
+              <div class="blk"></div>
+            </div>
+          </div>
+        </div>
+        <div class="info">
+          <div class="tagline"><span data-lang-inline="zh">店铺单页 · 中英双语</span><span data-lang-inline="en">Shop page · ZH / EN</span></div>
+          <h3><span data-lang-block="zh">SOMBRA 手冲咖啡店</span><span data-lang-block="en">SOMBRA Coffee Roasters</span></h3>
+          <p><span data-lang-block="zh">品牌故事、菜单价目、环境展示、到店信息、优惠券转换组件。</span><span data-lang-block="en">Story, priced menu, space gallery, visit info and a coupon conversion block.</span></p>
+          <span class="link"><span data-lang-inline="zh">打开预览</span><span data-lang-inline="en">Open preview</span> →</span>
+        </div>
+      </a>
+      <a class="w w2 reveal in" href="02-product-landing.html">
+        <div class="pv">
+          <div class="mock">
+            <div class="bar"><i></i><i></i><i></i></div>
+            <div class="body">
+              <div class="sk a"></div>
+              <div class="sk b"></div>
+              <div class="blk"></div>
+              <div class="sk c"></div>
+            </div>
+          </div>
+        </div>
+        <div class="info">
+          <div class="tagline"><span data-lang-inline="zh">产品落地页 · 中英双语</span><span data-lang-inline="en">Product landing · ZH / EN</span></div>
+          <h3><span data-lang-block="zh">AMIRA 修护精华</span><span data-lang-block="en">AMIRA Repair Serum</span></h3>
+          <p><span data-lang-block="zh">成分说明、前后对比滑块、三档定价、FAQ 折叠与移动端吸底购买栏。</span><span data-lang-block="en">Ingredients, before/after slider, three pricing tiers, FAQ accordion and a sticky mobile buy bar.</span></p>
+          <span class="link"><span data-lang-inline="zh">打开预览</span><span data-lang-inline="en">Open preview</span> →</span>
+        </div>
+      </a>
+      <a class="w w3 reveal in" href="03-restaurant-es.html">
+        <div class="pv">
+          <div class="mock">
+            <div class="bar"><i></i><i></i><i></i></div>
+            <div class="body">
+              <div class="sk a"></div>
+              <div class="blk"></div>
+              <div class="sk b"></div>
+              <div class="sk c"></div>
+            </div>
+          </div>
+        </div>
+        <div class="info">
+          <div class="tagline"><span data-lang-inline="zh">店铺单页 · 中西双语</span><span data-lang-inline="en">Shop page · ZH / ES</span></div>
+          <h3><span data-lang-block="zh">CASA NOVA 西班牙餐厅</span><span data-lang-block="en">CASA NOVA Spanish Bistro</span></h3>
+          <p><span data-lang-block="zh">暗色调品牌感、Tapas 卡片、完整菜单、主厨故事与在线预订表单。</span><span data-lang-block="en">Dark brand styling, tapas cards, full menu, chef story and an online booking form.</span></p>
+          <span class="link"><span data-lang-inline="zh">打开预览</span><span data-lang-inline="en">Open preview</span> →</span>
+        </div>
+      </a>
+      <a class="w w4 reveal in" href="简历.html">
+        <div class="pv">
+          <div class="mock">
+            <div class="bar"><i></i><i></i><i></i></div>
+            <div class="body">
+              <div class="sk a"></div>
+              <div class="sk b"></div>
+              <div class="sk c"></div>
+              <div class="blk"></div>
+            </div>
+          </div>
+        </div>
+        <div class="info">
+          <div class="tagline"><span data-lang-inline="zh">个人作品集 / 简历 · 中西双语</span><span data-lang-inline="en">Portfolio / resume · ZH / ES</span></div>
+          <h3><span data-lang-block="zh">林一 · 视觉设计师</span><span data-lang-block="en">Lin Yi · Visual Designer</span></h3>
+          <p><span data-lang-block="zh">个人陈述、技能标签、作品卡片、经历时间轴与联系方式，附简历下载。</span><span data-lang-block="en">Personal statement, skills, project cards, experience timeline, contact block and resume download.</span></p>
+          <span class="link"><span data-lang-inline="zh">打开预览</span><span data-lang-inline="en">Open preview</span> →</span>
+        </div>
+      </a>
+      <a class="w w5 reveal in" href="05-nail-landing.html">
+        <div class="pv">
+          <div class="mock">
+            <div class="bar"><i></i><i></i><i></i></div>
+            <div class="body">
+              <div class="sk a"></div>
+              <div class="sk b"></div>
+              <div class="blk"></div>
+              <div class="sk c"></div>
+            </div>
+          </div>
+        </div>
+        <div class="info">
+          <div class="tagline"><span data-lang-inline="zh">店铺单页 · 中英双语</span><span data-lang-inline="en">Shop page · ZH / EN</span></div>
+          <h3><span data-lang-block="zh">LUMI 预约制美甲工作室</span><span data-lang-block="en">LUMI Nail Studio</span></h3>
+          <p><span data-lang-block="zh">明码标价的项目表、作品色板墙、消毒与流程信任区块，以及访客可自助生成预约信息的表单。</span><span data-lang-block="en">Transparent pricing, a colour-wall gallery, a hygiene trust section and a booking form guests fill in themselves.</span></p>
+          <span class="link"><span data-lang-inline="zh">打开预览</span><span data-lang-inline="en">Open preview</span> →</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="flow" class="alt">
+  <div class="wrap">
+    <div class="head reveal in">
+      <span class="kick"><span data-lang-inline="zh">合作流程</span><span data-lang-inline="en">How we work</span></span>
+      <h2><span data-lang-block="zh">从聊需求到上线，五步</span><span data-lang-block="en">From first message to live, in five steps</span></h2>
+    </div>
+    <div class="flow reveal in">
+      <div class="stp">
+        <i>1</i>
+        <h4><span data-lang-block="zh">沟通需求</span><span data-lang-block="en">Scope call</span></h4>
+        <p><span data-lang-block="zh">15 分钟聊清目标、目标客群和你已有的素材。</span><span data-lang-block="en">A 15-minute chat about goals, audience and what you already have.</span></p>
+      </div>
+      <div class="stp">
+        <i>2</i>
+        <h4><span data-lang-block="zh">确认报价</span><span data-lang-block="en">Fixed quote</span></h4>
+        <p><span data-lang-block="zh">给出固定报价与交付日期，先付 50% 定金。</span><span data-lang-block="en">A fixed price and delivery date, with a 50% deposit upfront.</span></p>
+      </div>
+      <div class="stp">
+        <i>3</i>
+        <h4><span data-lang-block="zh">初稿预览</span><span data-lang-block="en">First draft</span></h4>
+        <p><span data-lang-block="zh">2–3 天内给出可点击的在线预览链接。</span><span data-lang-block="en">A clickable online preview within 2–3 days.</span></p>
+      </div>
+      <div class="stp">
+        <i>4</i>
+        <h4><span data-lang-block="zh">两轮修改</span><span data-lang-block="en">Two rounds</span></h4>
+        <p><span data-lang-block="zh">文字、图片、配色换成你满意的样子。</span><span data-lang-block="en">Copy, images and colors refined until you are happy.</span></p>
+      </div>
+      <div class="stp">
+        <i>5</i>
+        <h4><span data-lang-block="zh">上线交付</span><span data-lang-block="en">Go live</span></h4>
+        <p><span data-lang-block="zh">帮你绑定域名上线，交付源码与操作说明。</span><span data-lang-block="en">Domain connected and launched, with source code and a short guide.</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="head reveal in">
+      <span class="kick">FAQ</span>
+      <h2><span data-lang-block="zh">客户最常问的问题</span><span data-lang-block="en">Questions clients ask most</span></h2>
+    </div>
+    <div class="faqbox">
+      <details class="qa" open="">
+        <summary><span data-lang-inline="zh">我不会写文案，怎么办？</span><span data-lang-inline="en">I do not have the copy written. Can you help?</span></summary>
+        <div class="ans"><span data-lang-block="zh">可以。你只需要用微信语音或文字把想说的告诉我，我来整理成页面文案。如果一句话都写不出来，我会先问 10 个问题，从你的回答里提取。</span><span data-lang-block="en">Yes. Just send me a voice note or a rough message and I will shape it into page copy. If you are stuck starting, I will ask ten questions and build from your answers.</span></div>
+      </details>
+      <details class="qa" open="">
+        <summary><span data-lang-inline="zh">我没有照片和 Logo 呢？</span><span data-lang-inline="en">What if I have no photos or logo?</span></summary>
+        <div class="ans"><span data-lang-block="zh">没有照片我会用字体与配色排版来撑住页面质感，或用可商用图库替代；没有 Logo 我可以顺手做一个简单的文字标。这些都是含在报价里的，不会临时加钱。</span><span data-lang-block="en">Without photos I build the visual weight from typography and color, or use licensed stock imagery. Without a logo I will make a simple wordmark. Both are included — no surprise add-ons.</span></div>
+      </details>
+      <details class="qa" open="">
+        <summary><span data-lang-inline="zh">做好之后我自己能改吗？</span><span data-lang-inline="en">Can I edit it myself afterwards?</span></summary>
+        <div class="ans"><span data-lang-block="zh">可以，源码完全归你。改动文字和图片只需要打开一个文件替换即可，我会附一份图文操作说明。如果你完全不想碰代码，也可以买年费维护。</span><span data-lang-block="en">Yes, the code is fully yours. Changing text or images means editing one file, and I include a short illustrated guide. If you would rather not touch code at all, annual maintenance is available.</span></div>
+      </details>
+      <details class="qa" open="">
+        <summary><span data-lang-inline="zh">域名和服务器要多少钱？</span><span data-lang-inline="en">What do domain and hosting cost?</span></summary>
+        <div class="ans"><span data-lang-block="zh">域名约 ¥60–90 / 年，静态托管可以用免费方案，两者加起来通常不超过 ¥100 / 年，由你自己账户支付，我不经手。</span><span data-lang-block="en">A domain runs about ¥60–90/year and static hosting can be free — usually under ¥100/year total, paid from your own account so I never hold it.</span></div>
+      </details>
+      <details class="qa" open="">
+        <summary><span data-lang-inline="zh">付款方式，能开发票吗？</span><span data-lang-inline="en">How do I pay, and can I get an invoice?</span></summary>
+        <div class="ans"><span data-lang-block="zh">50% 定金开工、50% 上线前结清，支持微信 / 支付宝 / 对公转账。个人可开电子收据，企业可开普票。</span><span data-lang-block="en">50% deposit to start, 50% before launch. WeChat, Alipay or bank transfer. A digital receipt is available for individuals, and a standard invoice for companies.</span></div>
+      </details>
+      <details class="qa" open="">
+        <summary><span data-lang-inline="zh">不满意怎么办？</span><span data-lang-inline="en">What if I am not happy with it?</span></summary>
+        <div class="ans"><span data-lang-block="zh">初稿不满意，可在提交前无理由退全额定金。进入两轮修改阶段后，如仍无法达成一致，按已完成工作量结算，剩余部分退还。</span><span data-lang-block="en">If you dislike the first draft, cancel before revisions begin for a full deposit refund. Once revisions are underway, we settle for completed work and refund the rest.</span></div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <div class="cta reveal in">
+      <div style="position:relative;font-size:12.5px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--a2);margin-bottom:16px">
+        <span data-lang-inline="zh">页页有致</span><span data-lang-inline="en">One page, done right</span>
+      </div>
+      <h2><span data-lang-block="zh">先聊 15 分钟，不收钱</span><span data-lang-block="en">A 15-minute call, no charge</span></h2>
+      <p><span data-lang-block="zh">告诉我你做什么生意、现在最想解决什么，我会直接说清楚需不需要做网站、大概多少钱、几天能好。不合适我也会直说。</span><span data-lang-block="en">Tell me what you do and what you most want to fix. I will tell you plainly whether a site helps, roughly what it costs and how long it takes — and I will say so if it does not.</span></p>
+      <div class="btns">
+        <a href="#" class="btn btn-p" id="wxBtn" data-copy="JIARUI-XIE957">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 9 9 0 0 1-3.2-.6L3 21l1.7-4.6A8.4 8.4 0 0 1 12 3a8.4 8.4 0 0 1 9 8.5z"></path></svg>
+          <span data-lang-inline="zh">加微信：JIARUI-XIE957</span><span data-lang-inline="en">WeChat: JIARUI-XIE957</span>
+        </a>
+        <a href="mailto:xejrui@qq.com" class="btn btn-o">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 5h16v14H4z"></path><path d="M4 7l8 6 8-6"></path></svg>
+          xejrui@qq.com
+        </a>
+      </div>
+      <div class="hint">
+        <span data-lang-inline="zh">点一下自动复制微信号，再打开微信搜索添加</span><span data-lang-inline="en">One tap copies my WeChat ID — then search it in WeChat</span>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap fin">
+    <span>© <span id="yr">2026</span> <b style="color:var(--ink);font-weight:700">页致 PAGELY</b> · <span data-lang-inline="zh">页页有致。</span><span data-lang-inline="en">One page, done right.</span></span>
+    <span>
+      <span data-lang-inline="zh">单页落地页 · 简易官网 · 中英 / 中西双语</span>
+      <span data-lang-inline="en">one-page sites · bilingual ZH / EN / ES</span>
+    </span>
+    <span>
+      <a href="#" data-copy="JIARUI-XIE957"><span data-lang-inline="zh">微信 JIARUI-XIE957</span><span data-lang-inline="en">WeChat JIARUI-XIE957</span></a>
+      <span style="opacity:.45">&nbsp;·&nbsp;</span>
+      <a href="mailto:xejrui@qq.com">xejrui@qq.com</a>
+    </span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var html=document.documentElement;
+  function setLang(l){
+    html.setAttribute('data-lang',l);
+    html.setAttribute('lang', l==='zh'?'zh-CN':'en');
+    document.querySelectorAll('[data-setlang]').forEach(function(b){
+      b.setAttribute('aria-pressed', b.dataset.setlang===l?'true':'false');
+    });
+    try{localStorage.setItem('demo-lang',l);}catch(e){}
+  }
+  document.querySelectorAll('[data-setlang]').forEach(function(b){
+    b.addEventListener('click',function(){setLang(b.dataset.setlang);});
+  });
+  try{var s=localStorage.getItem('demo-lang'); if(s) setLang(s);}catch(e){}
+
+  var nav=document.getElementById('nav');
+  window.addEventListener('scroll',function(){nav.classList.toggle('scrolled',window.scrollY>8);},{passive:true});
+
+  var els=document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(en){
+      en.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
+    },{threshold:.12});
+    els.forEach(function(el){io.observe(el);});
+    setTimeout(function(){els.forEach(function(el){el.classList.add('in');});},2500);
+  }else{els.forEach(function(el){el.classList.add('in');});}
+
+  document.getElementById('burger').addEventListener('click',function(){
+    var n=document.querySelector('.nav-links');
+    var open=n.style.display==='flex';
+    n.style.display=open?'none':'flex';
+    n.style.position='absolute';n.style.top='72px';n.style.left='0';n.style.right='0';
+    n.style.background='#131319';n.style.padding='18px 24px';n.style.flexDirection='column';
+    n.style.borderBottom='1px solid rgba(255,255,255,.1)';n.style.marginLeft='0';
+  });
+  document.getElementById('yr').textContent=new Date().getFullYear();
+
+  /* 微信号：点击自动复制 + 轻提示（微信没有可直接跳转的加好友链接，复制是最稳的做法） */
+  var toast=document.createElement('div');
+  toast.className='toast';
+  document.body.appendChild(toast);
+  var toastTimer;
+  function showToast(msg){
+    toast.textContent=msg;
+    toast.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer=setTimeout(function(){toast.classList.remove('show');},2800);
+  }
+  function copyText(t){
+    if(navigator.clipboard&&navigator.clipboard.writeText){return navigator.clipboard.writeText(t);}
+    var ta=document.createElement('textarea');
+    ta.value=t;ta.setAttribute('readonly','');
+    ta.style.position='fixed';ta.style.top='-1000px';
+    document.body.appendChild(ta);
+    ta.select();
+    try{document.execCommand('copy');}catch(e){}
+    document.body.removeChild(ta);
+    return Promise.resolve();
+  }
+  document.querySelectorAll('[data-copy]').forEach(function(el){
+    el.addEventListener('click',function(ev){
+      ev.preventDefault();
+      var id=el.getAttribute('data-copy');
+      var zh=document.documentElement.getAttribute('data-lang')!=='en';
+      copyText(id).then(function(){
+        showToast(zh ? '微信号已复制：'+id+'　去微信搜索添加' : 'WeChat ID copied: '+id+' — search it in WeChat');
+      });
+    });
+  });
+})();
+</script>
+
+
+</body></html>
